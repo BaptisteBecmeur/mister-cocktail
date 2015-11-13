@@ -1,0 +1,25 @@
+<div class="text-center">
+  <h1>One Dose for one shot</h1>
+  <div class="formone">
+    <h2><%= @cocktail.name %></h2>
+    <%= cl_image_tag @cocktail.image, transformation: :standard %>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %>
+        <%= dose.ingredient.name %>
+        <%= link_to "X", dose_path(dose), method: :delete %>
+      </li>
+      <% end %>
+    </ul>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Select an ingredient" %>
+    <%= f.submit "Add a dose", class: "btn btn-info" %>
+    <% end %>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,20 @@
+<nav class="navbar-wagon">
+  <div class="container navbar-wagon-container">
+
+      <%= link_to root_path do
+       image_tag "https://image.freepik.com/free-icon/cocktail-glass-with-lemon_318-54050.png",
+       class: "navbar-wagon-logo"
+      end %>
+
+    <div class="navbar-wagon-pusher"></div>
+
+    <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+    <hr>
+    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+  </div>
+</nav>
